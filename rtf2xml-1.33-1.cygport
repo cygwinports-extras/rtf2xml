@@ -1,0 +1,11 @@
+inherit distutils
+
+
+HOMEPAGE="http://rtf2xml.sourceforge.net/"
+SRC_URI="mirror://sourceforge/rtf2xml/${P}.tar.gz"
+
+src_install() {
+	cd ${B}
+	distutils_install
+	doman ${S}/data/rtf2xml.1
+}
