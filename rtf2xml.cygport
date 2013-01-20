@@ -1,0 +1,18 @@
+inherit distutils
+
+NAME="rtf2xml"
+VERSION=1.33
+RELEASE=2
+CATEGORY="Text"
+SUMMARY="Converts MS RTF to XML"
+DESCRIPTION="The script rtf2xml faithfully converts Microsoft's RTF format to
+structured XML. Developers can make further transformations using standard XML
+tools, or use the stylsheets provided to convert to sdocbook or TEI."
+HOMEPAGE="http://rtf2xml.sourceforge.net/"
+SRC_URI="mirror://sourceforge/rtf2xml/${P}.tar.gz"
+
+src_install() {
+	cd ${B}
+	distutils_install
+	doman ${S}/data/rtf2xml.1
+}
